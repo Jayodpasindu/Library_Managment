@@ -47,8 +47,6 @@ CREATE TABLE Member (
 insert into Member (name, contact, address)
 value ("usert1", "0725686932", "address1");
 
-select * from Member;
-
 
 -- create Transactions table
 CREATE TABLE Transaction (
