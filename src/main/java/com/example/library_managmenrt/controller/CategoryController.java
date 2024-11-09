@@ -139,7 +139,7 @@ public class CategoryController {
 
         if (!idText.isEmpty() && !name.isEmpty()) {
             try {
-                int id = Integer.parseInt(idText); // Parse the ID to integer
+                int id = Integer.parseInt(idText);
                 if (selectedCategory == null) { // Adding a new category
                     if (!categoryList.stream().anyMatch(c -> c.getId() == id)) {
                         Category newCategory = new Category(id, name);
@@ -167,7 +167,7 @@ public class CategoryController {
     }
 
     private void clearFields() {
-        idField.clear(); // Clear input fields
+        idField.clear(); 
         nameField.clear();
     }
 
