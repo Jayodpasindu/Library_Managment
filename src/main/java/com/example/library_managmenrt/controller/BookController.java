@@ -81,7 +81,7 @@ public class BookController {
                             if (isDeleted) {
                                 bookList.remove(bookToDelete); // Remove from the ObservableList
                                 bookTable.refresh(); // Refresh the table view
-                                showAlert(Alert.AlertType.INFORMATION, "Category Deleted", "Deleted: " + bookToDelete.getTitle());
+                                showAlert(Alert.AlertType.INFORMATION, "Book Deleted", "Deleted: Title is" + bookToDelete.getTitle());
                             } else {
                                 showAlert(Alert.AlertType.ERROR, "Deletion Failed", "Failed to delete: " + bookToDelete.getTitle());
                             }
@@ -101,8 +101,7 @@ public class BookController {
             }
         });
 
-        // Set up the edit column with a button
-        editColumn.setCellValueFactory(new PropertyValueFactory<>("dummy")); // Dummy value for the edit column
+        // Set up the edit column operation with books
         editColumn.setCellFactory(new Callback<TableColumn<Book, Void>, TableCell<Book, Void>>() {
             @Override
             public TableCell<Book, Void> call(TableColumn<Book, Void> param) {
