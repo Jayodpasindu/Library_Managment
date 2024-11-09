@@ -15,7 +15,7 @@ public class BookDao {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
             session.save(book);
-            transaction.commit();
+            transaction.commit(); // End the database session
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -45,7 +45,7 @@ public class BookDao {
 
     public List<Book> getAllBooks() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            Query query = session.createQuery("FROM Book");
+            Query query = session.createQuery("FROM Book"); // Get from Book database
             return query.getResultList();
         }
     }
