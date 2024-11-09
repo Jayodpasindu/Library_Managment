@@ -39,8 +39,6 @@ public class LoginController {
 
         if (isAuthenticated) {
             navigateToMainScene();
-
-            // showAlert(Alert.AlertType.INFORMATION, "Login Successful", "Welcome, " + username + "!");
         } else {
             showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid username or password. Please try again.");
         }
@@ -56,7 +54,7 @@ public class LoginController {
 
     private void navigateToMainScene() {
         try {
-            // Load the new scene
+            // Load the Dashboard screen
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("dashboard.fxml"));
             Scene mainScene = new Scene(fxmlLoader.load());
 
